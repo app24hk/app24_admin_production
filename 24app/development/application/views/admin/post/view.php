@@ -62,8 +62,8 @@ if($postDetailsData>0){
 
  ?>
 
- <h2> <?php echo $postDetailsData['title']; ?></h2>
- <p> <?php echo $postDetailsData['description']; ?></p>
+ <h2> <?php echo json_decode(' " '.$postDetailsData['title'].' " '); ?></h2>
+ <p> <?php echo json_decode(' " '.$postDetailsData['description'].' " '); ?></p>
  <p> Username : <?php echo $postDetailsData['user_name']; ?></p>
  <p> Created  : <?php echo $postDetailsData['created']; ?></p>
   <p> Modified : <?php echo $postDetailsData['modified']; ?></p>

@@ -110,7 +110,7 @@ td .btn{margin-left:0;}
 					echo 	'
 					<td align="center" bgcolor="#FFFFFF"><input name="foo" type="checkbox" value="'.$plist['id'].'"></td>
 					<td class="col-xs-1">'.$plist['id'].'</td>';
-					$title = strip_tags($plist['title']);
+					$title = strip_tags(json_decode(' " '.$plist['title'].' " '));
 					if (strlen($title) > 14) {
 					$titleCut = substr($title, 0, 14);
 					$titleCut=$titleCut.'...';
@@ -129,7 +129,7 @@ td .btn{margin-left:0;}
 					}else{
 						echo '<td class="col-xs-1">'.'<img src="'.base_url('assets/images/uploads/noimage2.png').'" width="100px" height="100px"></td>';
 					}
-					$string = strip_tags($plist['description']);
+					$string = strip_tags(json_decode(' " '.$plist['description'].' " '));
 					if (strlen($string) > 50) {
 					$stringCut = substr($string, 0, 50);
 					$stringCut=$stringCut.'... <a href="'.base_url().'admin/post/view/'.$plist['id'].'" >Read More</a>'; 

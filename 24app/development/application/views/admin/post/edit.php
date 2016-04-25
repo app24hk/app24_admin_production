@@ -44,7 +44,7 @@ form#register-form .form-group input[type="submit"] {
 		  <span class="divider">/</span>
         </li>
 	</ul>
-
+<?php //phpinfo(); ?>
 <div class="page-header users-header">
         <h2>
           <?php echo ucfirst('Post management');?> 
@@ -107,11 +107,12 @@ if($postDetailsData>0){
   
 	<div class="form-group">
       <label for="usr">Title:</label>
-      <input type="text" name="title"   value="<?php  echo $postDetailsData['title']; ?>" class="form-control" id="title">
+	<?php //$description = json_decode($postDetailsData["description"]); var_dump($description); ?>
+      <input type="text" name="title"   value="<?php echo json_decode(' " '.$postDetailsData['title'].' " '); ?>" class="form-control" id="title">
     </div>
 	<div class="form-group">
       <label for="usr">Description:</label>
-      <textarea name="desc" class="form-control" id="desc"><?php  echo $postDetailsData['description']; ?></textarea>
+      <textarea name="desc" class="form-control" id="desc"><?php echo json_decode(' " '.$postDetailsData['description'].' " '); ?></textarea>
     </div>
 	
 	<div class="form-group">
